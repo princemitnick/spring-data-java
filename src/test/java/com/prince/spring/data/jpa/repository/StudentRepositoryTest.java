@@ -115,4 +115,52 @@ class StudentRepositoryTest {
         System.out.println("Student : "+studentList);
     }
 
+    @Test
+    public void printStudentByEmailId(){
+        Student student = studentRepository.getStudentByEmailId("jriquenson@pih.org");
+        System.out.println("Student : "+student);
+    }
+
+    @Test
+    public void printStudentFirstNameByEmailId(){
+        String firstName = studentRepository.getStudentFirstNameByEmailId("jriquenson@pih.org");
+        System.out.println("First Name : "+firstName) ;
+    }
+
+    @Test
+    public void printStudentFirstNameByEmailIdNative(){
+        String firstName = studentRepository.getStudentFirstNameByEmailId("jriquenson@pih.org");
+        System.out.println("First Name : "+firstName) ;
+    }
+
+    @Test
+    public void printStudentByEmailIdOrGuardianEmail(){
+        List<Student> studentList = studentRepository.getStudentFirstNameByEmailIdOrGuardianEmail(
+                "epeterson@pih.org",
+                "pipo@pih.org"
+        );
+
+        System.out.println("Student list : "+studentList);
+    }
+
+    @Test
+    public void printStudentByEmailIdOrGuardianEmailParams(){
+        List<Student> studentList = studentRepository.getStudentFirstNameByEmailIdOrGuardianEmailParams(
+                "jpaullouidor@pih.org",
+                "pipo@pih.org"
+        );
+
+        System.out.println("Student list : "+studentList);
+    }
+
+    @Test
+    public void updateStudentFirstNameByEmailId(){
+        int updateStudentFirstName = studentRepository.updateStudentNameByEmailId(
+                "Peterson Junior",
+                "epeterson@pih.org"
+        );
+
+        System.out.println("Done : "+updateStudentFirstName);
+    }
+
 }
